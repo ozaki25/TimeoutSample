@@ -12,7 +12,7 @@ class Sample3 extends Component {
           NavigationActions.navigate({ routeName: 'Sample1' })
       ]
     })
-    this.props.navigation.dispatch(action);
+    this.props.navigation.dispatch(action)
   }
 
   render() {
