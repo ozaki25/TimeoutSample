@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Text, TouchableOpacity, View } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 
 class Sample2 extends Component {
@@ -17,8 +17,7 @@ class Sample2 extends Component {
     this.props.navigation.navigate('Sample3', { startTimer: this._startTimer })
   }
 
-  _onTimeout = () => {
-    alert('時間切れです')
+  _resetNavigation = () => {
     const action = NavigationActions.reset({
       index: 0,
       actions: [
@@ -26,6 +25,10 @@ class Sample2 extends Component {
       ]
     })
     this.props.navigation.dispatch(action)
+  }
+
+  _onTimeout = () => {
+    Alert.alert('時間切れです', null, [{ text: 'OK', onPress: this._resetNavigation}])
   }
 
   componentWillMount() {
