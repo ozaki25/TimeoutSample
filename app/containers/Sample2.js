@@ -28,7 +28,7 @@ class Sample2 extends Component {
   }
 
   _onTimeout = () => {
-    Alert.alert('時間切れです', null, [{ text: 'OK', onPress: this._resetNavigation}])
+    Alert.alert(null, '時間切れです', [{ text: 'OK', onPress: this._resetNavigation}])
   }
 
   componentWillMount() {
